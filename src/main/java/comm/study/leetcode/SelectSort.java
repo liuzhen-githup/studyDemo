@@ -27,11 +27,9 @@ public class SelectSort {
     public static void main(String[] args) {
         Integer[] arr1 = { 5, 6, 7, 3, 6, 5, 19, 20, 11};
         Integer[] arr2 = { 1, 6, 6, 4, 3, 1};
-        List<Integer> listA = Arrays.asList(arr1);
-        List<Integer> listB = Arrays.asList(arr2);
         List<Integer> listC = new ArrayList<>();
-        listC.addAll(listB);
-        listC.addAll(listA);
+        listC.addAll(Arrays.asList(arr2));
+        listC.addAll(Arrays.asList(arr1));
         System.out.println(listC);
 
         Map<Integer,Integer> map = new HashMap<>();
