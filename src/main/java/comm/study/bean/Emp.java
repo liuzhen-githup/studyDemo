@@ -3,6 +3,9 @@
  */
 package comm.study.bean;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Objects;
 
 /**
@@ -14,6 +17,9 @@ import java.util.Objects;
  * @version 1.0
  * @Date 2021/3/10 10:51 下午
  */
+
+@Getter
+@Setter
 public class Emp {
 
     public String name;

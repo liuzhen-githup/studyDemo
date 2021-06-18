@@ -18,7 +18,7 @@ public class SnowFlake {
     /**
      * 起始时间戳
      */
-    private static final long START_TEMP = 1480166465631L;
+    private static final long START_TEMP = System.currentTimeMillis();
 
     /**
      * 每一部分占用的位数
@@ -65,7 +65,7 @@ public class SnowFlake {
      *
      * @return
      */
-    public synchronized long nextId() {
+    public synchronized long getNextId() {
         long currStmp = getNewstmp();
         if (currStmp < lastStmp) {
             throw new RuntimeException("Clock moved backwards.  Refusing to generate id");
@@ -84,11 +84,12 @@ public class SnowFlake {
         }
 
         lastStmp = currStmp;
-
-        return (currStmp - START_TEMP) << TIMESTMP_LEFT //时间戳部分
+        long id = (currStmp - START_TEMP) << TIMESTMP_LEFT //时间戳部分
                 | datacenterId << DATACENTER_LEFT       //数据中心部分
                 | machineId << MACHINE_LEFT             //机器标识部分
                 | sequence;                             //序列号部分
+
+        return id;
     }
     private long getNextMill() {
         long mill = getNewstmp();
@@ -106,7 +107,7 @@ public class SnowFlake {
         SnowFlake snowFlake=new SnowFlake(0, 0);
         for (int i = 0; i < 10; i++) {
             new Thread(()->{
-                System.out.println(Thread.currentThread().getName()+": "+snowFlake.nextId());
+                System.out.println(Thread.currentThread().getName()+": "+snowFlake.getNextId());
             },"AA"+i).start();
         }
     }
