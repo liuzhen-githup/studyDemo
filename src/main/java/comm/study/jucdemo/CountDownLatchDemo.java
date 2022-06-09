@@ -29,8 +29,6 @@ public class CountDownLatchDemo {
 
         countDownLatch.await();
         System.out.println(Thread.currentThread().getName()+"秦帝国，一统天下");
-
-        System.out.println(CountTryEnum.ONE.getRetMessage());
     }
 
     public static void closeDoor() throws InterruptedException {
