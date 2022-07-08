@@ -35,7 +35,7 @@ import java.nio.charset.StandardCharsets;
  * @version 1.0
  * @Date 2021/4/29 11:28 上午
  */
-public class TestBuffer {
+public class TestPicsBuffer {
 
     @Test
     public void  testBuffers(){

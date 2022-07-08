@@ -3,8 +3,11 @@
  */
 package comm.study.json;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.json.JsonMapper;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p></p>
@@ -17,8 +20,12 @@ import com.fasterxml.jackson.databind.json.JsonMapper;
  */
 public class JsonDemo {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws JsonProcessingException {
 
+        String orderId = "YFN-3a27d650b9e24dcfa347b50024b72a91-e60c6";
+        int num = (int)(orderId.charAt(orderId.length() - 1)) % 10;
+
+        System.out.println(num);
     }
 
     public static void toJson(){

@@ -26,7 +26,6 @@ public class CountDownLatchDemo {
                 countDownLatch.countDown();
             },CountTryEnum.ForEach_CountTryEnum(i).getRetMessage()).start();
         }
-
         countDownLatch.await();
         System.out.println(Thread.currentThread().getName()+"秦帝国，一统天下");
     }

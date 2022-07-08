@@ -3,6 +3,8 @@
  */
 package comm.study.bean;
 
+import lombok.ToString;
+
 import java.util.List;
 
 /**
@@ -14,6 +16,7 @@ import java.util.List;
  * @version 1.0
  * @Date 2021/3/5 2:26 下午
  */
+@ToString
 public class User {
 
     private String name;

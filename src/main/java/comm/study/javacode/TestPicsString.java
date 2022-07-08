@@ -16,7 +16,7 @@ import java.util.*;
  * @version 1.0
  * @Date 2021/4/22 4:39 下午
  */
-public class TestString {
+public class TestPicsString {
 
     public static void main(String[] args) {
         Map<String, Integer> map = new HashMap<>();

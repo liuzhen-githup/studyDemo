@@ -3,9 +3,9 @@
  */
 package comm.study.bean;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -20,22 +20,33 @@ import java.util.Objects;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class Emp {
 
     public String name;
+
     public int age ;
-    public Emp(String name, int age){
-        this.name = name ;
-        this.age = age;
+
+    public Boolean admin;
+
+    public List<RmkInfo> rmkInfos;
+
+    @Setter
+    @Getter
+    @ToString
+    public static class RmkInfo{
+        private String keys;
+        private List<String> value;
+
+
     }
 
 
-    @Override
-    public String toString() {
-        return "Emp{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
+    public Emp(String name, int age){
+        this.name = name ;
+        this.age = age;
     }
 
 }

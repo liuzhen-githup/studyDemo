@@ -44,10 +44,11 @@ public class RedisDemo {
         jedis.setnx("age","27");
         jedis.setnx("email","abc@cn.com");
         jedis.setnx("general","男");
-        jedis.setnx("salar","10001。11");
+        jedis.setnx("salar","10001.11");
         System.out.println("测试redis连接：name = " +jedis.get("name"));
         Set<String> stringSet = jedis.keys("*");
         System.out.println(stringSet);
+
     }
 
     /**
