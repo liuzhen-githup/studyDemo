@@ -90,6 +90,8 @@ public class RedisDemo {
      * @param jedis
      */
     public static void testSet(Jedis jedis){
+        jedis.sadd("user","name","xy");
+
 
     }
     /**
